@@ -1,190 +1,316 @@
-body{
- /* height: 2000px; */
+body {
  margin: 0;
+ font-family: Arial, sans-serif;
 }
 
-.hd{
- height: auto;
+header {
+ background-color: white;
+ padding: 20px;
+ text-align: center;
 }
 
-.hd_1{
- width: 50%;
- height:100px;
- margin: auto;
- background-image: url(image/NodeComm.png);
- background-repeat: no-repeat;
- background-size: contain;
+.header-logo img {
+ max-width: 100%;
 }
 
-.hd_2{
- height: auto;
+.nav {
+ padding: 10px 0;
 }
 
-.hd_2 div{
+.nav ul {
+ list-style-type: none;
+ margin: 0;
+ padding: 0;
  display: flex;
  justify-content: space-around;
 }
 
-.main{
- height: auto;
- /* background-color: green; */
+.nav ul li {
+ display: inline;
 }
-/* .main div{
- height: 500px;
-} */
 
-.ma_1{
+.nav ul li a {
+ text-decoration: none;
+ color: black;
+ padding: 10px 20px;
+ display: inline-block;
+ transition: color 0.3s;
  position: relative;
- height: 500px; 
- /* background-image: url(image/img1.jpg);
- background-repeat: no-repeat;
- background-size: cover;
- opacity: 0.3;
- position: relative; */
+ transition: transform 0.5s, box-shadow 0.5s; 
 }
 
-.ma_1 .background {
- position: absolute; /* 背景要素を配置 */
+.nav ul li a:hover {
+ transform: translateY(-10px) scale(1.2);
+ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.nav ul li a::after {
+ content: '';
+ position: absolute;
+ bottom: -2px;
+ left: 50%;
+ width: 0;
+ height: 4px;
+ background-color: #0481A2;
+ transition: all 0.3s;
+ transform: translateX(-50%);
+}
+
+.nav ul li a:hover::after {
+ width: 100%;
+}
+
+.main {
+ position: relative;
+ height: auto;
+ text-align: center;
+ padding: 50px 0;
+ overflow: hidden;
+}
+
+.main::before {
+ content: '';
+ position: absolute;
  top: 0;
  left: 0;
  width: 100%;
  height: 100%;
- background-image: url(image/img1.jpg); /* 背景画像を設定 */
+ background-image: url(/image/image4_resized.png);
  background-size: cover;
- background-repeat: no-repeat;
- opacity: 0.3; /* 背景画像に透明度を設定 */
- z-index: 0; /* 他の要素の背面に配置 */
+ background-position: center;
+ opacity: 0.5;
+ z-index: -1;
 }
 
 .ma_1_wrap {
- /* position: relative; */
- width: 600px;
- z-index: 1;
- opacity: 1;
- position:absolute;
- top: 50%;
- left: 50%;
- transform: translate(-50%, -50%);
+ display: flex;
+ flex-wrap: wrap; /* 子要素が複数行にわたって配置されるようにする */
+ justify-content: center; /* 中央揃えにする */
+ gap: 20px; /* アイテム間の隙間 */
 }
 
-.ma_h2 {
- text-align: center;
+.ma_1_wrap div {
+ flex: 0 1 calc(50% - 20px); /* 2列にするために幅を設定、隙間を考慮 */
+ box-sizing: border-box;
 }
 
-.ma_1 p{
- font-size: 25px;
+.ma_1_wrap a {
+ display: block;
 }
 
-.ma_2 {
+/* .ma_1_wrap div {
+ background-color: #0000002a;
+} */
+
+.NCI, .NCT, .NCC {
+ transition-duration: 0.5s;
+}
+
+.NCI:hover, .NCT:hover, .NCC:hover {
+ transform: translate(-5px, -5px);
+ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.ma_1_wrap img {
+ width: 100%;
+ height: auto;
+ display: block;
+}
+
+.main h1 {
+ font-size: 3em;
+ margin: 0;
+}
+
+.sc1 {
+ display: flex;
+ justify-content: center;
+ align-items: center;
  position: relative;
- height: 500px; 
+ height: 100vh;
+ overflow: hidden;
 }
 
-.ma_2 .background{
- background-image: url(image/img4.png);
- position: absolute; /* 背景要素を配置 */
+.sc1::before {
+ content: '';
+ position: absolute;
  top: 0;
  left: 0;
  width: 100%;
  height: 100%;
- /* background-image: url(image/img1.jpg); 背景画像を設定 */
+ background-image: url(/image/image1_resized.png);
  background-size: cover;
- background-repeat: no-repeat;
- opacity: 0.3; /* 背景画像に透明度を設定 */
- z-index: 0; /* 他の要素の背面に配置 */
+ background-position: center;
+ opacity: 0.5;
+ z-index: -1;
 }
 
 .ma_2_wrap {
- /* position: relative; */
- width: 600px;
+ width: 700px;
  z-index: 1;
- opacity: 1;
- position:absolute;
+ /* position:absolute;
  top: 50%;
  left: 50%;
- transform: translate(-50%, -50%);
+ transform: translate(-50%, -50%); */
+ text-align: center;
 }
 
-.ma_2 p{
+.ma_h2 {
+ font-size: 50px;
+ width: 700px;
+ top: 10%;
+ position: absolute;
+}
+
+.ma_p {
  font-size: 25px;
+ line-height: 60px;
+ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.ma_3 {
+.main p {
+ color: gray;
+}
+
+.section {
+ padding: 50px 20px;
+ text-align: center;
+}
+
+.section h2 {
  position: relative;
- height: 750px; 
+ display: inline-block;
+ margin-bottom: 20px;
+ font-size: 3em;
 }
 
-.ma_3 .background{
- background-image: url(image/img5.png);
- position: absolute; /* 背景要素を配置 */
+.section .section_p {
+ font-size: 1.5em;
+}
+
+.section p {
+ font-size: 1em;
+ margin: 0 0 40px;
+}
+
+.section .portfolio {
+ display: flex;
+ justify-content: space-around;
+ flex-wrap: wrap;
+}
+
+.section .portfolio .c-bnr {
+ width: 200px;
+ margin: 10px;
+ display: flex;
+ flex-direction: column; /* 縦に並べる */
+ align-items: center;
+ justify-content: center;
+ text-align: center;
+ color: #333;
+}
+
+.section .portfolio img {
+ width: 100%;
+ height: 100%;
+}
+
+.employee-info {
+ text-align: center;
+ padding: 10px 0;
+}
+
+.employee-info p {
+ margin: 0;
+}
+
+.c-bnr.bg a {
+ position: relative;
+ overflow: hidden;
+}
+
+.c-bnr.bg a::before,
+.c-bnr.bg a::after {
+ content: "";
+ display: block;
+ position: absolute;
+ margin: auto;
+ top: 0;
+ left: 0;
+ transition: .3s cubic-bezier(0.45, 0, 0.55, 1);
+ opacity: 0;
+ z-index: 1;
+}
+
+.c-bnr.bg a::before {
+ background: rgba(190,91,70,.6);
+ width: 100%;
+ height: 100%;
+}
+
+.c-bnr.bg a::after {
+ color: #fff;
+ content: "Read More";
+ font-size: 22px;
+ font-weight: bold;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ width: 100%;
+ height: 100%;
+ top: 0;
+ left: 0;
+}
+
+.c-bnr.bg a:hover::before,
+.c-bnr.bg a:hover::after {
+ opacity: 1;
+}
+
+.c-bnr.bg a img {
+ transition: transform 0.3s cubic-bezier(0.45, 0, 0.55, 1);
+ display: block; /* 画像がブロック要素として表示されるように */
+ width: 100%; /* 画像が親要素の幅にフィットするように */
+ height: auto; /* 画像の高さを自動調整 */
+}
+
+.c-bnr.bg a:hover img {
+ transform: scale(1.1);
+ z-index: 0;
+}
+
+footer {
+ padding: 20px;
+ text-align: center;
+ position: relative;
+}
+
+footer::before {
+ content: '';
+ position: absolute;
  top: 0;
  left: 0;
  width: 100%;
  height: 100%;
- /* background-image: url(image/img1.jpg); 背景画像を設定 */
+ background-image: url(/image/image2_resized.png);
  background-size: cover;
- background-repeat: no-repeat;
- opacity: 0.3; /* 背景画像に透明度を設定 */
- z-index: 0; /* 他の要素の背面に配置 */
+ background-position: center;
+ opacity: 0.5;
+ z-index: -1;
 }
 
-.ma_3_wrap {
- /* position: relative; */
- width: 600px;
- z-index: 1;
- opacity: 1;
- position:absolute;
- top: 50%;
- left: 50%;
- transform: translate(-50%, -50%);
+footer ul {
+ list-style-type: none;
+ margin: 0;
+ padding: 0;
 }
 
-.ma_3 p{
- font-size: 25px;
+footer ul li {
+ margin: 5px 0;
 }
 
-.ma_4 {
- position: relative;
- height: 750px; 
-}
-
-.ma_4 .background{
- background-image: url(image/img6.png);
- position: absolute; /* 背景要素を配置 */
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
- /* background-image: url(image/img1.jpg); 背景画像を設定 */
- background-size: cover;
- background-repeat: no-repeat;
- opacity: 0.3; /* 背景画像に透明度を設定 */
- z-index: 0; /* 他の要素の背面に配置 */
-}
-
-.ma_4_wrap {
- /* position: relative; */
- width: 600px;
- z-index: 1;
- opacity: 1;
- position:absolute;
- top: 50%;
- left: 50%;
- transform: translate(-50%, -50%);
-}
-
-.ma_4 p{
- font-size: 25px;
-}
-
-.ft{
- height: auto;
-}
-
-.ft > div{
- height: 200px;
-}
-
+/* テキストを回転させるアニメーション */
+/* rollAnimeクラスを付与しておくと、その要素が回転する */
 .rollAnime.roll span {
  transition-property: opacity,transform;
  transform: rotateY(360deg);

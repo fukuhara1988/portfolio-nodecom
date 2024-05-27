@@ -2,7 +2,7 @@
 function rollAnimeControl() {
  const rollAnimeElements = document.querySelectorAll('.rollAnime'); // rollAnimeクラスを持つ要素をすべて取得
  rollAnimeElements.forEach(element => {
-   const elemPos = element.getBoundingClientRect().top + window.scrollY - 50;//要素がビューポートの上端からどれくらい離れているか＋ビューポートの上端がWebページのｙ座標のどの位置にいるのか。つまり、要素がWebページ内のどの位置にあるか(絶対値)を計算している。
+   const elemPos = element.getBoundingClientRect().top + window.scrollY - 100;//要素がビューポートの上端からどれくらい離れているか＋ビューポートの上端がWebページのｙ座標のどの位置にいるのか。つまり、要素がWebページ内のどの位置にあるか(絶対値)を計算している。
    console.log(element.getBoundingClientRect().top)
    const scroll = window.scrollY;//ビューポートの上端がWebページのｙ座標のどの位置にいるのか
    const windowHeight = window.innerHeight;
@@ -28,7 +28,7 @@ console.dir(document.querySelector(".ma_p"))
 
 // スクロール時とページ読み込み時にアニメーションをトリガー
 window.addEventListener('scroll', rollAnimeControl);
-window.addEventListener('load', () => {
+window.addEventListener('DOMContentLoaded', () => {
  const elements = document.querySelectorAll('.rollAnime');
  elements.forEach(element => {
    const text = element.textContent;
